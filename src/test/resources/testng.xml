@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests" verbose="2" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.gmail.kolesnyk.logging.DefaultListener"/>
+    </listeners>
+    <test name="All tests suite">
+        <classes>
+            <class name="com.gmail.kolesnyk.AutoEraseFieldTest"/>
+            <class name="com.gmail.kolesnyk.CurrencyExchangeLossTest"/>
+            <class name="com.gmail.kolesnyk.UpdateCurrencyAccordingCountryTest"/>
+        </classes>
+    </test>
+</suite>
