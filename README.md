@@ -32,4 +32,3 @@
 - *webdriver.browser.name* - browser name which will be used for test run
 - *timeouts.page* - timeout for pages loading
 - *timeouts.element* - default timeout for loading elements
-- *timeouts.minimal* - minimal timeout for loading elements (use if default timeout for loading elements is too long)
