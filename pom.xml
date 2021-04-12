@@ -120,7 +120,7 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemPropertyVariables>
-                        <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
+                        <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
@@ -137,7 +137,7 @@
                 <version>${allure.plugin.version}</version>
                 <configuration>
                     <reportVersion>${allure.testng.version}</reportVersion>
-                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+                    <resultsDirectory>${project.basedir}/target/allure-results</resultsDirectory>
                     <allureDownloadUrl>
                         https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure.testng.version}/allure-commandline-${allure.testng.version}.zip
                     </allureDownloadUrl>

@@ -7,11 +7,13 @@ import org.openqa.selenium.WebElement;
 public class ScrollHelper {
 
     public static void scrollToElement(WebElement element) {
+        WaitHelper.waitUntilJSReady();
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
     public static void scrollToBottom() {
+        WaitHelper.waitUntilJSReady();
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }

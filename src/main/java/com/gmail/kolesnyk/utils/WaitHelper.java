@@ -2,6 +2,7 @@ package com.gmail.kolesnyk.utils;
 
 import com.gmail.kolesnyk.driver.DriverProvider;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -35,5 +36,15 @@ public class WaitHelper {
     public static void waitForElementHasText(WebElement element, int timeout) {
         new WebDriverWait(DriverProvider.getDriver(), timeout)
                 .until((ExpectedCondition<Boolean>) d -> !element.getText().isEmpty());
+    }
+
+    public static void waitUntilJSReady() {
+        WebDriverWait wait = new WebDriverWait(DriverProvider.getDriver(), PropertyHelper.getConf().elementTimeout());
+        wait.until((ExpectedCondition<Boolean>) driver -> {
+            if (((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete")) {
+                return Boolean.TRUE;
+            }
+            return null;
+        });
     }
 }
